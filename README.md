@@ -14,6 +14,8 @@
 
 ## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
 
+## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
+
 
 ---
 🌴 API Endpoints
