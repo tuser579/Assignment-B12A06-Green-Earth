@@ -5,32 +5,43 @@ document.addEventListener('DOMContentLoaded', function() {
 });  
 
 
-// Set active category
+// set active category
 function setActiveCategory(element) {
-    // Remove active class from all buttons
+    // remove active class from all buttons
     const buttons = document.querySelectorAll('.category-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
             
-    // Add active class to clicked button
+    // add active class to clicked button
     element.classList.add('active');
 }
 
 
 // showSpinner
-showSpinner = () => {
-    const spinner = document.getElementById("spinner");
-    spinner.style.display = "block";
+// showSpinner = () => {
+//     const spinner = document.getElementById("spinner");
+//     spinner.style.display = "block";
+//     setTimeout(() => {
+//         console.log("Data loaded!");
+//         spinner.style.display = "none";
+//     }, 50);
+// };  
+
+// showingSpinner for loading data from api
+toggleLoader = () => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "flex";
     setTimeout(() => {
         console.log("Data loaded!");
-        spinner.style.display = "none";
-    }, 50);
+        loader.style.display = "none";
+    }, 100);
 };     
 
 
 // all trees
 const allTrees = (element) => {
   setActiveCategory(element);  
-  showSpinner();
+  // showSpinner();
+  toggleLoader()
   const container = document.getElementById("apiData");
   container.innerHTML = ``;
   fetch("https://openapi.programming-hero.com/api/plants")
@@ -42,7 +53,8 @@ const allTrees = (element) => {
         newEntry.classList.add(
           "w-[100%]",
           "sm:w-[31%]",
-          "border",
+          "shadow-1xl",
+          "sm:shadow-2xl",
           "flex",
           "flex-wrap",
           "flex-col",
@@ -75,7 +87,8 @@ const allTrees = (element) => {
 // category trees
 const categoryTrees = (element,id) => { 
   setActiveCategory(element);  
-  showSpinner();  
+  // showSpinner();  
+  toggleLoader()
   const container = document.getElementById("apiData");
   container.innerHTML = ``;
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
@@ -87,7 +100,8 @@ const categoryTrees = (element,id) => {
         newEntry.classList.add(
           "w-[100%]",
           "sm:w-[31%]",
-          "border",
+          "shadow-1xl",
+          "sm:shadow-2xl",
           "flex",
           "flex-wrap",
           "flex-col",

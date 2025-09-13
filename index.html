@@ -21,14 +21,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        .spinner {
+        /* .spinner {
             border: 6px solid #4CAF50;
             border-radius: 50%;
             width: 40px;
             height: 40px;
             animation: spin 0.1s linear infinite;
             margin: auto;
-        }
+        } */
 
         .category-btn {
             transition: all 0.1s ease;
@@ -52,18 +52,17 @@
     <main id="bg" class="">
 
         <!-- navbar section  -->
-         
         <div class="flex-none sm:flex navbar bg-base-100 shadow-sm bg-[#15803D] pl-2 sm:pl-4 pr-3 sm:pr-4">
 
             <div class="navbar-start">
-                <div class="border flex justify-center items-center gap-2 sm:gap-3">
+                <div class="flex justify-center items-center gap-2 sm:gap-3">
                     <img class="w-8 sm:w-10 rounded-md" src="assets/logo_green_earth.jpg" alt="">
                     <h5 class="font-semibold sm:font-semibold text-[1rem] sm:text-[1.1rem] text-white">Green Earth</h5>
                 </div>
             </div>
 
             <div class="navbar-center">
-                <div class="border space-x-4 text-[1rem] text-white hidden sm:inline">
+                <div class="space-x-4 text-[1rem] text-white hidden sm:inline">
                     <a href="about.html">About</a>
                     <a href="services.html">Gallery</a>
                     <a href="contact.html">Plant a Tree</a>
@@ -94,7 +93,7 @@
         <!-- banner section -->
         <section class="bg-[#CFF0DC] flex text-[#1F2935] justify-between">
             <img class="h-[16rem] hidden sm:inline" src="assets/hero-leaf1.png" alt="">
-            <div class="text-center space-y-4 p-15 border">
+            <div class="text-center space-y-4 p-15">
                 <h1 class="text-2xl sm:text-4xl font-semibold sm:font-bold">Plant a Tree, Grow a Future</h1>
                 <p class="text-[0.7rem]">Join our mission to plant 1 million trees and make the Earth greener
                     for future
@@ -107,48 +106,57 @@
         <!-- choose trees section -->
         <section class="bg-[#dcfce7] pl-[1rem] sm:pl-[3rem] pr-[1rem] sm:pr-[3rem] pt-[1.5rem] sm:pt-[3rem] pb-[1.5rem] sm:pb-[3rem]">
             <h3 class="text-center text-[1.6rem] sm:text-[2rem] font-semibold sm:font-bold pb-5">Choose Your Trees</h3>
+
             <!-- for spinning -->
-            <div id="spinner" class="spinner" style="display: none;"></div>
+            <!-- <div id="spinner" class="spinner" style="display: none;"></div> -->
+            
+            <!-- Loader -->
+            <div id="loader" class="flex justify-center items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-green-900 animate-bounce [animation-delay:-0.3s]"></span>
+                <span class="h-3 w-3 rounded-full bg-green-900 animate-bounce [animation-delay:-0.15s]"></span>
+                <span class="h-3 w-3 rounded-full bg-green-900 animate-bounce"></span>
+            </div>
+
             <div class="flex flex-col  sm:flex sm:flex-row justify-center gap-10 sm:gap-5">
-                <div class="border flex flex-col w-full sm:w-[15%] text-center">
+                <div class="flex flex-col w-full sm:w-[15%] text-center">
                     <h2 class="font-semibold text-[1.4rem] sm:text-[1.5rem] mb-[1rem]">Categories</h2>
                     <div class="space-y-1">
 
-                        <p onclick="allTrees(this)" class="category-btn active bg-white hover:bg-green-600">All
+                        <p onclick="allTrees(this)" class="category-btn active bg-white shadow-2xl hover:bg-green-600">All
                             Trees</p>
-                        <p onclick="categoryTrees(this,1)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,1)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Fruit Trees
                         </p>
-                        <p onclick="categoryTrees(this,2)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,2)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Flowering
                             Trees</p>
-                        <p onclick="categoryTrees(this,3)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,3)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Shade Trees
                         </p>
-                        <p onclick="categoryTrees(this,4)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,4)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Medicinal
                             Trees</p>
-                        <p onclick="categoryTrees(this,5)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,5)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Timber Trees
                         </p>
-                        <p onclick="categoryTrees(this,6)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,6)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Evergreen
                             Trees</p>
-                        <p onclick="categoryTrees(this,7)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,7)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Ornamental
                             Trees</p>
-                        <p onclick="categoryTrees(this,8)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,8)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Bamboo</p>
-                        <p onclick="categoryTrees(this,9)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,9)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Climbers</p>
-                        <p onclick="categoryTrees(this,10)" class="category-btn bg-white hover:bg-green-600">
+                        <p onclick="categoryTrees(this,10)" class="category-btn bg-white shadow-2xl hover:bg-green-600">
                             Aquatic
                             Plants</p>
 
                     </div>
                 </div>
                 <div id="apiData"
-                    class="overflow-y-auto h-135 border flex flex-wrap w-full sm:w-[70%] borde gap-7">
+                    class="overflow-y-auto h-135 flex flex-wrap w-full sm:w-[70%] borde gap-7">
                     <!-- <div class="w-[31%] border flex flex-col bg-white rounded-[0.5rem] p-[1rem] space-y-2">
                     <div class="border h-[15rem] w-[100%]"></div>
                     <h4 class="text-[1.1rem] font-semibold">Mango Tree</h4>
@@ -163,7 +171,7 @@
                 </div>   -->
 
                 </div>
-                <div class="w-full sm:w-[18%] border bg-white p-4 space-y-1 rounded-[0.5rem]">
+                <div class="w-full sm:w-[18%] bg-white shadow-1xl sm:shadow-2xl p-4 space-y-1 rounded-[0.5rem]">
                     <h1 class="text-[1.2rem] font-semibold">Your Cart</h1>
                     <div id="cartlist" class="space-y-2">
                         <!-- <div class="bg-[#dcfce7] rounded-[0.5rem] flex justify-between items-center p-2 pt-0 pb-0">
@@ -186,8 +194,8 @@
         <section class="bg-[#d0e1d6] pt-5 sm:pt-10 pb-10 sm:pb-15 pl-5 sm:pl-40 pr-5 sm:pr-40">
             <h2 class="text-center text-[1.5rem] sm:text-[2rem] font-semibold pb-5 sm:pb-10">About the Campaign</h2>
             <div class="flex flex-col sm:flex sm:flex-row justify-center items-center gap-10">
-                <img class="w-[23rem]" src="assets/about.png" alt="">
-                <div class="border space-y-5">
+                <img class="w-[23rem] shadow-1xl" src="assets/about.png" alt="">
+                <div class="space-y-5">
                     <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change.
                         Since
                         our
@@ -206,19 +214,19 @@
         <!-- our impact section -->
         <section class="bg-[#CFF0DC] pt-4 sm:pt-15 pb-9 sm:pb-15">
             <h2 class="text-center text-[1.8rem] sm:text-[2rem] font-semibold mb-4 sm:mb-8">Our Impact</h2>
-            <div class="border flex flex-col sm:flex sm:flex-row justify-center items-center text-center gap-5">
+            <div class="flex flex-col sm:flex sm:flex-row justify-center items-center text-center gap-5">
 
-                <div class="border w-[13rem] sm:w-[23rem] h-[5rem] sm:h-[8rem] bg-white rounded-[1rem] text-center flex flex-col justify-center items-center">
+                <div class="w-[13rem] sm:w-[23rem] h-[5rem] sm:h-[8rem] bg-white shadow-1xl sm:shadow-2xl rounded-[1rem] text-center flex flex-col justify-center items-center">
                     <h1 class="text-green-600 text-[1.6rem] font-semibold">500K+</h1>
                     <p class="text-[0.9rem]">Trees Planted</p>
                 </div>
 
-                <div class="border w-[13rem] sm:w-[23rem] h-[5rem] sm:h-[8rem] bg-white rounded-[1rem] text-center flex flex-col justify-center items-center">
+                <div class="w-[13rem] sm:w-[23rem] h-[5rem] sm:h-[8rem] bg-white shadow-1xl sm:shadow-2xl rounded-[1rem] text-center flex flex-col justify-center items-center">
                     <h1 class="text-green-600 text-[1.6rem] font-semibold">120+</h1>
                     <p class="text-[0.9rem]">Communities Involved</p>
                 </div>
 
-                <div class="border w-[13rem] sm:w-[23rem] h-[5rem] sm:h-[8rem] bg-white rounded-[1rem] text-center flex flex-col justify-center items-center">
+                <div class="w-[13rem] sm:w-[23rem] h-[5rem] sm:h-[8rem] bg-white shadow-1xl sm:shadow-2xl rounded-[1rem] text-center flex flex-col justify-center items-center">
                     <h1 class="text-green-600 text-[1.6rem] font-semibold">30+</h1>
                     <p class="text-[0.9rem]">Countries Reached</p>
                 </div>
@@ -229,8 +237,8 @@
         <!-- footer section -->
         <section class="bg-[#15803D] pt-5 sm:pt-15 pb-5 sm:pb-15">
             <h1 class="text-[1.5rem] sm:text-[1.8rem] text-white text-center">Plant a Tree Today</h1>
-            <div class="border flex flex-col justify-center items-center gap-5">
-                <div class="border flex flex-col justify-center items-center gap-2 sm:gap-5 p-5 sm:p-10 mt-5 sm:mt-10 rounded-[0.5rem] bg-[#129745] border-shadow-lg">
+            <div class="flex flex-col justify-center items-center gap-5">
+                <div class="flex flex-col justify-center items-center gap-2 sm:gap-5 p-5 sm:p-10 mt-5 sm:mt-10 rounded-[0.5rem] bg-[#129745] border-shadow-lg">
                     <input class="w-full bg-white p-1.5 sm:p-3 rounded-md" type="text" placeholder="Your Name">
                     <input class="w-full bg-white p-1.5 sm:p-3 rounded-md" type="text" placeholder="Your Email Address">
                     <select class="w-full bg-white p-1.5 sm:p-3 rounded-md">
@@ -253,7 +261,7 @@
 
     <!-- Modal -->
     <div id="modal"
-        class="overflow-y-auto fixed inset-0 bg-opacity-50 flex items-center justify-center opacity-0 invisible transition-opacity duration-300 ">
+        class="overflow-y-auto fixed inset-0 bg-opacity-50 shadow-4xl flex items-center justify-center opacity-0 invisible transition-opacity duration-300 ">
         <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full overflow-hidden">
             <h2 id="modal-title" class="text-2xl font-bold ml-4 mt-8 sm:mt-3">Tree Details</h2>
             <div class="p-4 pt-2 sm:pt-4 sm:pb-1 pb-4 space-y-1 sm:space-y-2">
